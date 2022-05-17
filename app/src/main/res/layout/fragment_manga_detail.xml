@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.fragments.manga.detail.MangaDetailFragment">
+
+    <ImageView
+        android:id="@+id/cover_img"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_poster_margin_img"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_poster_img"
+        android:layout_width="15dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="25dp" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/poster_cv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:elevation="10dp"
+        android:translationZ="1dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="@id/gl_poster_img"
+        app:layout_constraintTop_toBottomOf="@id/gl_poster_margin_img"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            android:id="@+id/poster_img"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            tools:src="@tools:sample/avatars" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/subtype_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="155dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ranks_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="135dp" />
+
+    <TextView
+        android:id="@+id/subtype_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:text="tv"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/subtype_gl"
+        app:layout_constraintTop_toBottomOf="@id/cover_img" />
+
+    <TextView
+        android:id="@+id/bullet_point_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="point"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/year_tv"
+        app:layout_constraintStart_toEndOf="@id/subtype_tv"
+        app:layout_constraintTop_toBottomOf="@id/cover_img" />
+
+    <TextView
+        android:id="@+id/year_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:text="2022"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/subtype_tv"
+        app:layout_constraintTop_toBottomOf="@id/cover_img" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/subtype_gl"
+        app:layout_constraintTop_toBottomOf="@id/subtype_tv"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/synopsis_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/gl_poster_img"
+        app:layout_constraintTop_toBottomOf="@id/poster_cv" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/score_cv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/darker_gray"
+        android:elevation="20dp"
+        app:layout_constraintStart_toStartOf="@id/gl_poster_img"
+        app:layout_constraintTop_toBottomOf="@id/synopsis_tv"
+        app:strokeColor="@android:color/darker_gray"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/score_kitsu_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="10dp"
+                android:text="score"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/avg_rating_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="4dp"
+                android:text="64"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/score_kitsu_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/rating_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="rating_star"
+        android:src="@drawable/ic_detailed_star"
+        app:layout_constraintBottom_toBottomOf="@id/score_cv"
+        app:layout_constraintStart_toStartOf="@id/ranks_gl"
+        app:layout_constraintTop_toBottomOf="@id/synopsis_tv" />
+
+    <TextView
+        android:id="@+id/rating_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="rank"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/score_cv"
+        app:layout_constraintStart_toStartOf="@id/subtype_gl"
+        app:layout_constraintTop_toBottomOf="@id/synopsis_tv" />
+
+    <ImageView
+        android:id="@+id/popularity_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_popularity"
+        app:layout_constraintStart_toStartOf="@id/ranks_gl"
+        app:layout_constraintTop_toBottomOf="@id/rating_img" />
+
+    <TextView
+        android:id="@+id/popularity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="rank"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/score_cv"
+        app:layout_constraintStart_toStartOf="@id/subtype_gl"
+        app:layout_constraintTop_toBottomOf="@id/rating_img" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
