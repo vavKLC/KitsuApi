@@ -37,15 +37,8 @@ class AnimeAdapter(
             binding.animeImg.setImage(data.attributes.posterImage?.original)
 
             binding.root.setOnClickListener {
-                if (data.attributes.youtubeVideoId == null)
-                    onItemClick(data.id, null)
-                else
-                    onItemClick(data.id, data.attributes.youtubeVideoId)
+                  onItemClick(data.id, data.attributes.youtubeVideoId)
             }
-
-
         }
-
     }
-
 }
